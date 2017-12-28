@@ -1,0 +1,7 @@
+#!/bin/sh
+
+rm xipuImage.bin
+cat tempfile xipImage > xipImage.bin
+mkimage -x -A arm -O linux -T kernel -C none -a 0x08040040 -e 0x08040041 -n "Linux-4.2.0-arm1" -d xipImage.bin xipuImage.bin
+rm xipImage.bin
+
